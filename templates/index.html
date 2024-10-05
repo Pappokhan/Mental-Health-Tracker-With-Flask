@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Condition Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mental Health Condition Checker</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+
+            <div class="question">
+                <label>{{ form.question1.label }}</label>
+                {{ form.question1(class="select-input") }}
+            </div>
+
+            <div class="question">
+                <label>{{ form.question2.label }}</label>
+                {{ form.question2(class="select-input") }}
+            </div>
+
+            <div class="question">
+                <label>{{ form.question3.label }}</label>
+                {{ form.question3(class="select-input") }}
+            </div>
+
+            <div class="question">
+                <label>{{ form.question4.label }}</label>
+                {{ form.question4(class="select-input") }}
+            </div>
+
+            <div class="question">
+                <label>{{ form.question5.label }}</label>
+                {{ form.question5(class="select-input") }}
+            </div>
+
+            <div class="question">
+                <label>{{ form.question6.label }}</label>
+                {{ form.question6(class="select-input") }}
+            </div>
+
+            <div class="question">
+                <label>{{ form.question7.label }}</label>
+                {{ form.question7(class="select-input") }}
+            </div>
+
+            <div class="question">
+                <label>{{ form.question8.label }}</label>
+                {{ form.question8(class="select-input") }}
+            </div>
+
+            <button type="submit" class="submit-button">Check my mental health</button>
+        </form>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flashes">
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
